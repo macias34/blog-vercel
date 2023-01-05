@@ -1,0 +1,71 @@
+$phone: 300px;
+$phone400: 390px;
+$tablet500: 550px;
+$tablet: 768px;
+$desktop: 1024px;
+$landscapePhone: 600px;
+$landscape800: 800px;
+$smallDesktop: 1500px;
+$bigDesktop: 1900px;
+
+@mixin portrait{
+  @media (orientation:portrait){
+    @content;
+  }
+}
+
+@mixin landscape{
+  @media (orientation:landscape){
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (min-width: #{$phone}) and (max-width: #{$desktop - 1px}) and (orientation:portrait){
+    @content;
+  }
+}
+@mixin phone400 {
+  @media (min-width: #{$phone400}) and (max-width: #{$desktop - 1px}) and (orientation:portrait){
+    @content;
+  }
+}
+
+@mixin landscapePhone{
+  @media (min-width: #{$landscapePhone}) and (max-width: #{$desktop - 1px})  and (orientation: landscape) {
+    @content;
+  }
+};
+@mixin landscape800{
+  @media (min-width: #{$landscape800}) and (max-width: #{$desktop - 1px})  and (orientation: landscape) {
+    @content;
+  }
+};
+
+@mixin tablet{
+  @media (min-width: #{$tablet}) and (max-width: #{$desktop - 1}) and (orientation:portrait){
+    @content;
+  }
+};
+@mixin tablet500 {
+	@media (min-width: #{$tablet500}) and (max-width: #{$tablet - 1px})  and (orientation: portrait) {
+		@content;
+	}
+}
+
+@mixin smallDesktop {
+	@media (min-width: #{$desktop}) {
+		@content;
+	}
+}
+
+@mixin bigDesktop {
+	@media (min-width: #{$smallDesktop}) {
+		@content;
+	}
+}
+@mixin hugeDesktop {
+	@media (min-width : #{$bigDesktop}) {
+		@content;
+	}
+}
