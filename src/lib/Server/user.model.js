@@ -1,8 +1,12 @@
-import { JWT_ACCESS_SECRET } from "$env/static/private";
+// import { JWT_ACCESS_SECRET } from "$env/static/private";
+import dotenv from "dotenv";
+dotenv.config();
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { error } from "@sveltejs/kit";
 import { prisma } from "$lib/Server/prisma";
+
+const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET;
 
 const createUser = async (username, password) => {
   // Check if user exists
