@@ -1,7 +1,9 @@
 import { error } from "@sveltejs/kit";
 import { prisma } from "$lib/Server/prisma";
 import jwt from "jsonwebtoken";
-import { JWT_ACCESS_SECRET } from "$env/static/private";
+import dotenv from "dotenv";
+dotenv.config();
+const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET;
 import { authController } from "$lib/Server/user.model";
 
 export const GET = async ({ request, locals }) => {
