@@ -11,6 +11,7 @@ export const GET = async ({ params }) => {
 
     return new Response(fileStream);
   } catch (err) {
+    console.log(err);
     throw error(500, err);
   }
 };
@@ -28,6 +29,7 @@ export const DELETE = async ({ params, locals }) => {
       JSON.stringify({ message: "Post deleted successfuly;" })
     );
   } catch (err) {
+    console.log(err);
     throw error(500, err);
   }
 };

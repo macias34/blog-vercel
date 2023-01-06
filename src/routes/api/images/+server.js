@@ -10,6 +10,7 @@ export const GET = async () => {
 
     return new Response(JSON.stringify(imgs));
   } catch (err) {
+    console.log(err);
     throw error(500, err);
   }
 };

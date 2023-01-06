@@ -14,6 +14,7 @@ export const GET = async () => {
     if (!posts) throw error(500, "Couldn't fetch posts");
     return new Response(JSON.stringify(posts));
   } catch (err) {
+    console.log(err);
     throw error(500, err);
   }
 };
@@ -46,6 +47,7 @@ export const POST = async ({ request, locals }) => {
     });
     return new Response(JSON.stringify(post));
   } catch (err) {
+    console.log(err);
     throw error(500, err);
   }
 };

@@ -55,7 +55,6 @@ model PostCategory {
   post_id     Int 
   category   Category @relation(fields: [category_id], references: [category_id])
   category_id Int
-
   @@id([post_category_id, category_id, post_id]) 
   @@unique([post_category_id, category_id, post_id])
 } 
@@ -68,7 +67,6 @@ model PostImg{
   img      Img      @relation(fields: [img_id], references: [img_id])
   img_id    Int
  
-
   @@id([post_img_id, img_id, post_id]) 
   @@unique([post_img_id, img_id, post_id])
 } 

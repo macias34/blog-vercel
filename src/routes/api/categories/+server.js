@@ -17,6 +17,7 @@ export const GET = async ({ request, locals }) => {
     if (!categories) throw error(500, "Couldn't fetch categories.");
     return new Response(JSON.stringify(categories));
   } catch (err) {
+    console.log(err);
     throw error(500, err);
   }
 };
@@ -37,6 +38,7 @@ export const POST = async ({ request, locals }) => {
       JSON.stringify({ message: "Category added successfuly." })
     );
   } catch (err) {
+    console.log(err);
     throw error(500, err);
   }
 };

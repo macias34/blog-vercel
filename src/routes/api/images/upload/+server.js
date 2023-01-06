@@ -44,6 +44,7 @@ export async function POST({ request, locals }) {
 
     return new Response(JSON.stringify(image));
   } catch (err) {
+    console.log(err);
     throw error(500, "Couldn't fetch the post.");
   }
 }
