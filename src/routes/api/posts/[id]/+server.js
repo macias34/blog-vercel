@@ -19,7 +19,6 @@ export const GET = async ({ params }) => {
     if (!post) throw error(500, "Couldn't fetch the post.");
     return new Response(JSON.stringify(post));
   } catch (err) {
-    console.log(err);
     throw error(500, "Couldn't fetch the post.");
   }
 };
@@ -56,7 +55,6 @@ export const PUT = async ({ request, params, locals }) => {
       JSON.stringify({ message: "Post updated succesfully." })
     );
   } catch (err) {
-    console.log(err);
     throw error(500, "Failed to update the post.");
   }
 };
@@ -89,7 +87,6 @@ export const DELETE = async ({ params, locals }) => {
       JSON.stringify({ message: "Post deleted succesfully." })
     );
   } catch (err) {
-    console.log(err);
     throw error(500, "Couldn't delete the post.");
   }
 };

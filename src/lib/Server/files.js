@@ -19,9 +19,8 @@ export const proccessFile = async (request, fileType) => {
 };
 
 export const saveFile = async (filePath, fileBase64) => {
-  await fs.writeFile(filePath, fileBase64, "base64", async (err) => {
+  await fs.writeFile(filePath, fileBase64, "base64", (err) => {
     if (err) {
-      console.log(err);
       throw err;
     }
   });

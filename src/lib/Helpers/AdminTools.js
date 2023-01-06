@@ -27,9 +27,7 @@ export function getBase64(file) {
   var reader = new FileReader();
   reader.readAsDataURL(file);
   reader.onload = function () {};
-  reader.onerror = function (error) {
-    console.log("Error: ", error);
-  };
+  reader.onerror = function (error) {};
 }
 
 export const sanatizeFile = (file) => {

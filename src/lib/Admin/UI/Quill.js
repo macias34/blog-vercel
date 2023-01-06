@@ -42,7 +42,6 @@ const imageUploadHandler = async (image) => {
     const img = await FILEPOST(url, formData)
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         return {
           id: res.img_id,
           url: res.url,

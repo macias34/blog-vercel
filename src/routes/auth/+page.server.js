@@ -3,11 +3,14 @@ import { loginUser } from "$lib/Server/user.model";
 
 export const load = (event) => {
   const user = event.locals.user;
+
+  if (user) {
+    throw redirect(302, "/");
+  }
 };
 
 export const actions = {
   default: async (event) => {
-    console.log(event);
     const formData = Object.fromEntries(await event.request.formData());
 
     if (!formData.username || !formData.password) {
@@ -34,5 +37,6 @@ export const actions = {
       sameSite: "strict",
       maxAge: 60 * 60 * 24, // 1 day
     });
+    throw redirect(302, "/");
   },
 };

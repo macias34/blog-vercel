@@ -11,7 +11,5 @@ export class Logger {
       minute: "numeric",
       second: "numeric",
     });
-
-    console.log(`${currentTime} | ${this.fileName} - ${message}`);
   }
 }

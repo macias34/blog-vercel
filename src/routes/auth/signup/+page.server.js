@@ -3,6 +3,16 @@ import { error, fail } from "@sveltejs/kit";
 
 import { redirect } from "@sveltejs/kit";
 
+export async function load({ fetch, locals }) {
+  const user = locals.user;
+
+  if (!user) {
+    throw error(401, {
+      message: "You must be logged in to view this page",
+    });
+  }
+}
+
 export const actions = {
   default: async (event) => {
     const formData = Object.fromEntries(await event.request.formData());

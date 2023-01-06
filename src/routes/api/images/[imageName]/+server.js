@@ -2,7 +2,7 @@ import { prisma } from "$lib/Server/prisma";
 import { authController } from "$lib/Server/user.model";
 import { error } from "@sveltejs/kit";
 import fs from "fs";
-const imagesPath = ".././post_imgs/";
+const imagesPath = "./uploads/post_imgs/";
 
 export const GET = async ({ params }) => {
   try {

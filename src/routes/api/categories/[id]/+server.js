@@ -17,7 +17,6 @@ export const GET = async ({ params }) => {
     if (!category) throw error(500, "Couldn't fetch the category.");
     return new Response(JSON.stringify(category));
   } catch (err) {
-    console.log(err);
     throw error(500, "Couldn't fetch the category.");
   }
 };
@@ -40,7 +39,6 @@ export const PUT = async ({ request, params, locals }) => {
       JSON.stringify({ message: "Category updated succesfully." })
     );
   } catch (err) {
-    console.log(err);
     throw error(500, "Failed to update the category.");
   }
 };
@@ -66,7 +64,6 @@ export const DELETE = async ({ params, locals }) => {
       JSON.stringify({ message: "Category deleted succesfully." })
     );
   } catch (err) {
-    console.log(err);
     throw error(500, "Couldn't delete the category.");
   }
 };

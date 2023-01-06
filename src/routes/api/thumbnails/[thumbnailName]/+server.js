@@ -2,7 +2,7 @@ import { prisma } from "$lib/Server/prisma";
 import { error } from "@sveltejs/kit";
 import fs from "fs";
 
-const thumbnailsPath = ".././thumbnails/";
+const thumbnailsPath = "./uploads/thumbnails/";
 
 export const GET = async ({ params }) => {
   try {
